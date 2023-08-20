@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer sale landing page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="bg-amber-100 inline-flex p-20">
+            <div class="py-40">
+                <p class="font-medium text-2xl px-20 py-2">---Sale Fever---</p>
+                <h1 class="font-bold text-4xl p-2">Purchase TK 200 or above & get <span class="text-pink-500">20% off</span></h1>
+                <div class="inline-flex px-10 py-5 gap-5">
+                    <p class="font-medium text-xl pt-2">Use Promo Code</p>
+                    <button class="bg-pink-500 p-3 rounded-lg text-white">SELL200</button>
+                </div>
+            </div>
+            <div class="w-[90%]">
+                <img src="./images/Summer 1.png" />
+            </div>
+        </section>
+        
+
+    </header>
+    <main class="flex">
+        <section class="grid gap-10 p-10">
+            <div>
+                <div>
+                    <h1 class="font-bold text-3xl">Kitchenware</h1>
+                </div>
+                <div class="inline-flex gap-3 lg:gap-20 ">
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod1.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod2.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod3.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1 class="font-bold text-3xl">Sportswear</h1>
+                </div>
+                <div class="inline-flex gap-3 lg:gap-20 ">
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod4.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod5.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-xl p-5">
+                        <figure class="bg-zinc-100 px-5 pt-5">
+                          <img src="images/prod6.png" alt="Shoes" class="rounded-xl" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">K. Accessories</h2>
+                          <p class="text-slate-400">39.00TK</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+          <div class="w-full pt-10">
+            <h1>Have coupon?</h1>
+            <input
+              id="input-coupon"
+              class="border"
+              type="text"
+              placeholder="Coupon Code"
+            />
+            <button
+              onclick="applyCoupon()"
+              id="apply-btn"
+              class="bg-[#E527B2] btn text-white capitalize"
+              disabled
+            >
+              Apply
+            </button>
+            <div id="product"></div>
+            <div class="my-6 font-bold" id="totalCalculation">
+              <p class="my-2">
+                Total Price :
+                <span class="text-gray-500" id="total-price">0</span> TK
+              </p>
+              <p class="my-2">
+                Discount : <span class="text-gray-500" id="discount">0</span> TK
+              </p>
+              <p class="my-2">
+                Total : <span class="text-gray-500" id="total">0</span> TK
+              </p>
+              
+              <button
+                class="btn bg-[#E527B2] w-full text-white"
+                onclick="my_modal_1.showModal()"
+              >
+                Make Purchase
+              </button>
+              <dialog id="my_modal_1" class="modal text-center">
+                <form method="dialog" class="modal-box">
+                  <div class="justify-center w-full">
+                    <img class="mx-auto" src="images/congo.png" alt="" />
+                  </div>
+                  <h3 class="font-bold text-3xl">Congratulations!</h3>
+                  <p class="py-4">Your Purchase the product</p>
+                  <div class="modal-action justify-center">
+                    
+                    <button
+                      onclick="goHome()"
+                      class="btn bg-[#E527B2] text-white"
+                    >
+                      Go Home
+                    </button>
+                  </div>
+                </form>
+              </dialog>
+  
+              
+            </div>
+          </div>
+        </section>
+
+    </main>
+    
+</body>
+</html>
